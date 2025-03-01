@@ -1,6 +1,6 @@
 FROM ghost:5-alpine as cloudinary
 RUN apk add g++ make python3
-RUN su-exec node yarn add git+https://github.com/decoded-cipher/ghost-storage-cloudinary.git
+RUN su-exec node yarn add ghost-storage-cloudinary-v2
 
 FROM ghost:5-alpine
 
