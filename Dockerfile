@@ -9,7 +9,7 @@ RUN git clone https://github.com/TryGhost/Ruby.git /var/lib/ghost/content/themes
 
 
 COPY --chown=node:node --from=cloudinary $GHOST_INSTALL/node_modules $GHOST_INSTALL/node_modules
-COPY --chown=node:node --from=cloudinary $GHOST_INSTALL/node_modules/ghost-storage-cloudinary $GHOST_INSTALL/content/adapters/storage/ghost-storage-cloudinary
+COPY --chown=node:node --from=cloudinary $GHOST_INSTALL/node_modules/ghost-storage-cloudinary-v2 $GHOST_INSTALL/content/adapters/storage/ghost-storage-cloudinary-v2
 
 RUN set -ex; \
     su-exec node ghost config storage.active ghost-storage-cloudinary; \
