@@ -15,7 +15,7 @@ RUN set -ex; \
     su-exec node ghost config storage.active ghost-storage-cloudinary-v2; \
     su-exec node ghost config storage.ghost-storage-cloudinary-v2.upload.use_filename false; \
     su-exec node ghost config storage.ghost-storage-cloudinary-v2.upload.unique_filename true; \
-    su-exec node ghost config storage.ghost-storage-cloudinary-v2.upload.overwrite true; \
+    su-exec node ghost config storage.ghost-storage-cloudinary-v2.upload.overwrite false; \
     su-exec node ghost config storage.ghost-storage-cloudinary-v2.fetch.quality auto; \
     su-exec node ghost config storage.ghost-storage-cloudinary-v2.upload.folder "ghost"; \
     su-exec node ghost config storage.ghost-storage-cloudinary-v2.fetch.cdn_subdomain true; \
