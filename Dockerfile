@@ -4,7 +4,7 @@ RUN su-exec node yarn add ghost-storage-cloudinary-v2
 
 FROM ghost:alpine
 
-RUN apk add --no-cache git
+RUN apk add --no-cache git su-exec
 RUN git clone https://github.com/TryGhost/Ruby.git /var/lib/ghost/content/themes/ruby
 
 
