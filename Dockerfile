@@ -1,5 +1,5 @@
 FROM ghost:5-alpine as r2
-RUN apk add g++ make python3
+RUN apk add --no-cache g++ make python3 su-exec
 RUN su-exec node yarn add ghost-storage-adapter-s3
 
 FROM ghost:alpine
