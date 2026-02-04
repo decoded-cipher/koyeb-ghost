@@ -23,7 +23,7 @@ COPY --chown=node:node --from=r2 \
 
 # Configure Ghost
 RUN set -ex; \
-    su-exec node ghost config storage.active ghost-storage-adapter-s3;
+    su-exec node ghost config storage.active ghost-storage-adapter-s3; \
     su-exec node ghost config mail.transport "SMTP"; \
     su-exec node ghost config mail.options.service "Gmail";
 
