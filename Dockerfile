@@ -23,16 +23,7 @@ COPY --chown=node:node --from=r2 \
 
 # Configure Ghost
 RUN set -ex; \
-    su-exec node ghost config storage.active ghost-storage-adapter-s3; \
-    \
-    su-exec node ghost config storage.ghost-storage-adapter-s3.accessKeyId "$R2_ACCESS_KEY_ID"; \
-    su-exec node ghost config storage.ghost-storage-adapter-s3.secretAccessKey "$R2_SECRET_ACCESS_KEY"; \
-    su-exec node ghost config storage.ghost-storage-adapter-s3.region "auto"; \
-    su-exec node ghost config storage.ghost-storage-adapter-s3.bucket "$R2_BUCKET"; \
-    su-exec node ghost config storage.ghost-storage-adapter-s3.endpoint "https://$R2_ACCOUNT_ID.r2.cloudflarestorage.com"; \
-    su-exec node ghost config storage.ghost-storage-adapter-s3.pathStyle true; \
-    su-exec node ghost config storage.ghost-storage-adapter-s3.assetHost "$R2_PUBLIC_URL"; \
-    \
+    su-exec node ghost config storage.active ghost-storage-adapter-s3;
     su-exec node ghost config mail.transport "SMTP"; \
     su-exec node ghost config mail.options.service "Gmail";
 
